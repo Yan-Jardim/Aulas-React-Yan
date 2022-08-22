@@ -14,17 +14,6 @@ function Home() {
     return (
         <div className='App'>
 
-            <Header className="header" texto={'aqui é o header'} />
-
-            <Secao texto={'esse é o texto da secao 1'} />
-
-            <Secao texto={'esse é o texto da secao 2'} />
-
-            <Footer texto={'esse é o texto do footer'} />
-
-            {mostrar ? <><S.Link href="https://github.com/Yan-Jardim"> LINK DO GIT</S.Link></> : <>Nada de link aqui </>}
-            <br />
-            {link ? <><a href="https://github.com/Yan-Jardim"> LINK DO GIT</a></> : <>Nada de link aqui </>}
 
         </div>
 
