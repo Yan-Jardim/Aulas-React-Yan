@@ -1,69 +1,86 @@
 import * as S from "../styles/styles";
 
 function Home() {
-
-
-    const lista = [
+    const Lista = [
         {
-            Nome: "Nome: Yan",
-            idade: "Idade: 21",
-            data_de_nacimento: "Data de Nacimento: 08/01/2001",
-            nome_da_mae: "Nome da Mãe: Luciana",
-            nome_do_pai: "Nome do Pai: Erivaldo"
+            nome: "abacaxi",
+            quatidade: 2,
+            doce: true
         },
         {
-            Nome: "Nome: Malu",
-            idade: "Idade: 19",
-            data_de_nacimento: "Data de Nacimento: 08/01/2003",
-            nome_da_mae: "Nome da Mãe: Elena",
-            nome_do_pai: "Nome do Pai: Marcelo"
+            nome: "maçã",
+            quatidade: 12,
+            doce: true
         },
         {
-            Nome: "Nome: Luciana",
-            idade: "Idade: 41",
-            data_de_nacimento: "Data de Nacimento: 03/06/1980",
-            nome_da_mae: "Nome da Mãe: Concilia",
-            nome_do_pai: ""
+            nome: "carambola",
+            quatidade: 12,
+            doce: false
         },
         {
-            Nome: "Nome: Neymar jn",
-            idade: "Idade: 30",
-            data_de_nacimento: "Data de Nacimento: 05/02/1992",
-            nome_da_mae: "Nome da Mãe: Nadine",
-            nome_do_pai: ""
-        },
-        {
-            Nome: "Nome: Cristiano Ronaldo",
-            idade: "Idade: 37",
-            data_de_nacimento: "Data de Nacimento: 05/02/1985",
-            nome_da_mae: "Nome da Mãe: Maria Dolores",
-            nome_do_pai: ""
+            nome: "limão",
+            quatidade: 12,
+            doce: false
         }
     ]
+    const Lista2 = [
+        {
+            nome: "abacaxi",
+            quatidade: 6,
+            doce: true
+        },
+        {
+            nome: "pêssego",
+            quatidade: 12,
+            doce: true
+        },
+        {
+            nome: "tomate",
+            quatidade: 6,
+            doce: false
+        }
+    ]
+    const filtrando = Lista.filter(itemLista => {
+        return itemLista.doce === false
+
+    })
+    console.log(filtrando, 'filtrando')
+
+    const filter = Lista2.filter(itemLista => {
+        return itemLista.doce === true
+
+    })
+    console.log(filter, 'filtrando')
 
     return (
         <div className='App'>
             {
-                lista.map(lista => {
-
+                filtrando.map(itemLista => {
                     return (
-                        <S.Secao>
-                        <S.Lista>{lista.Nome}</S.Lista>
-                        <div>{lista.idade}</div>
-                        <div>{lista.data_de_nacimento}</div>
-                        <div>{lista.nome_da_mae}</div>
-                        <div>{lista.nome_do_pai}</div>
-                        </S.Secao>
+                        <p>{itemLista.nome}</p>
                     )
-
+                })
+            }
+            .
+            {
+                filter.map(itemLista2 => {
+                    return (
+                        <p>
+                            {itemLista2.nome}
+                        </p>
+                    )
                 }
-                )
+
+                ) 
             }
         </div>
-
     );
 }
 export default Home;
 
-//fazer uma lista exibindo5 pessoas com nome, idade, date de nacimento e nome da mãe, e para 3 pessoa
-// o nome do pai porem quem não tiver o pai nem o titulo de pai
+  //FILTER
+    //Listagem com 4 obejetos cada objeto contendo 3 item diversoso, e item  boolean
+    // só dois sejam true dois vao ser false e exiba os itens que tem essa"false"
+
+    //outro lista que tenha 3 objetos com 3 strinhs e só vão dois item que a string
+    // seja abacaxi
