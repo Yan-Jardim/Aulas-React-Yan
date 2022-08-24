@@ -1,38 +1,34 @@
-import Header from "../src/components/header";
-import Secao from "../src/components/Secao";
-import Footer from "../src/components/footer";
+import { isExpressionWithTypeArguments } from "typescript";
 import * as S from "../styles/styles";
 
-
-
 function Home() {
-    const mostrar = 1
-    const link = 1
-
-    const secao = 'componente'
+    const mensagem = "Você conseguiu"
+    const number = 4
 
     return (
         <div className='App'>
+            <form>
+                <label>Escreva um Numero:</label>
+                <input onChange={(e) => { alert(JSON.parse(e.target.value) + number) }} />
+                <button>enviar</button>
+            </form>
 
-            <Header className="header" texto={'aqui é o header'} />
+            <div onClick={() => { alert('Você conseguiu') }} >
 
-            <Secao texto={'esse é o texto da secao 1'} />
+                <p> Texto de onClick</p>
 
-            <Secao texto={'esse é o texto da secao 2'} />
-
-            <Footer texto={'esse é o texto do footer'} />
-
-            {mostrar ? <><S.Link href="https://github.com/Yan-Jardim"> LINK DO GIT</S.Link></> : <>Nada de link aqui </>}
-            <br />
-            {link ? <><a href="https://github.com/Yan-Jardim"> LINK DO GIT</a></> : <>Nada de link aqui </>}
-
+            </div>
         </div>
-
     );
 }
 export default Home;
+//Onclick é o click
+//onChenge é a mundança
 
-//Vai fazer 4 cards que usem o mesmo componente porem mostre textos diferentes
+//ex1
+//fazer um input com onChenge que a pessoa digitar ele vai somar com uma variavel
+//com o valor 4 e vai retornar o alert com o sesultado
 
-// Mostrar 2 links que consomem o mesmo componente que vai ser passado um boleno props, se um passar true exibe o link, se eu passar false ou não 
-// passar nada , não exibe o link
+//ex2
+//fazer um click numa div com texto qualquer que retorne um alert o texto "Você conseguiu"
+//de uma variavel .
