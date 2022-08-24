@@ -1,34 +1,22 @@
-import { isExpressionWithTypeArguments } from "typescript";
-import * as S from "../styles/styles";
+import { Teste, Click } from '../src/utils'
 
 function Home() {
-    const mensagem = "Você conseguiu"
-    const number = 4
 
     return (
-        <div className='App'>
-            <form>
-                <label>Escreva um Numero:</label>
-                <input onChange={(e) => { alert(JSON.parse(e.target.value) + number) }} />
-                <button>enviar</button>
-            </form>
-
-            <div onClick={() => { alert('Você conseguiu') }} >
-
-                <p> Texto de onClick</p>
-
-            </div>
-        </div>
+        <form>
+            <input onChange={(e) => { Click(e.target.value) }} />
+            <button onClick={(e) => { Click(mensagem, subMenssagem) }}>Enviar</button>
+        </form >
     );
 }
 export default Home;
-//Onclick é o click
-//onChenge é a mundança
 
-//ex1
-//fazer um input com onChenge que a pessoa digitar ele vai somar com uma variavel
-//com o valor 4 e vai retornar o alert com o sesultado
 
-//ex2
-//fazer um click numa div com texto qualquer que retorne um alert o texto "Você conseguiu"
-//de uma variavel .
+//if else
+// quero que você faça uma condição que se o valor digitado num input for --Guitarra-- o cosole tem
+//cordas, se digitar ---bateria--cosole tem pedal e você digitar --microfone coloca tem fios,
+//se nenhuma delas atender é para colocar --não existe esse instrumento--
+
+//switch
+//quero que vc faça um cosole com ++ caseswitch que faça algo com 3 opções e uma opção para quando não
+//atender as 3 opções
