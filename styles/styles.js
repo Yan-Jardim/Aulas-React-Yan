@@ -2,8 +2,11 @@ import styled from 'styled-components'
 
 
 
-export const Link = styled.a`
+export const Button = styled.button`
+display: flex ;
 
+`
+export const Teste = styled.p`
 color: red;
 
 `

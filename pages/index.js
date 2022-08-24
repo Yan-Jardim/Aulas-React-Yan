@@ -1,22 +1,23 @@
+import { useState } from 'react';
+import * as S from "../styles/styles";
 import { Teste, Click } from '../src/utils'
 
 function Home() {
-
+    //Use Starte
+    const [Teste, setTeste] = useState('O Yan')
+    const Funcao = ()=>{
+        setTeste('Gosto muito de escutar musica')
+    }
+    const [numero, setTeste2] = useState(4)
     return (
-        <form>
-            <input onChange={(e) => { Click(e.target.value) }} />
-            <button onClick={(e) => { Click(mensagem, subMenssagem) }}>Enviar</button>
-        </form >
+        <>
+            {Teste}
+            <button onClick={() => Funcao()}>Trocar o nome</button>
+            {numero}
+            <button onClick={() => setTeste2(numero * 4)}>Multiplicar</button>
+        </>
     );
 }
 export default Home;
-
-
-//if else
-// quero que você faça uma condição que se o valor digitado num input for --Guitarra-- o cosole tem
-//cordas, se digitar ---bateria--cosole tem pedal e você digitar --microfone coloca tem fios,
-//se nenhuma delas atender é para colocar --não existe esse instrumento--
-
-//switch
-//quero que vc faça um cosole com ++ caseswitch que faça algo com 3 opções e uma opção para quando não
-//atender as 3 opções
+ // vc tera que fazer uma função que muda dois states que exibe na tela numa mesmo frase
+ // vc tera que fazer um state com comtador, (* 4( VEZES 4 ))
