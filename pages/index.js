@@ -1,38 +1,23 @@
-import Header from "../src/components/header";
-import Secao from "../src/components/Secao";
-import Footer from "../src/components/footer";
+import { isExpressionWithTypeArguments } from "typescript";
 import * as S from "../styles/styles";
-
-
+import { Teste, Click } from '../src/utils'
 
 function Home() {
-    const mostrar = 1
-    const link = 1
-
-    const secao = 'componente'
-
+    const mensagem = 'É Muito Loko'
+    const subMenssagem = 'Yan'
     return (
-        <div className='App'>
+        <div className="Home">
 
-            <Header className="header" texto={'aqui é o header'} />
+            <form>
 
-            <Secao texto={'esse é o texto da secao 1'} />
+                <input onChange={(e) => { Teste(e.target.value) }} />
 
-            <Secao texto={'esse é o texto da secao 2'} />
+                <button onClick={(e) => { Click(mensagem, subMenssagem) }}>Enviar</button>
 
-            <Footer texto={'esse é o texto do footer'} />
-
-            {mostrar ? <><S.Link href="https://github.com/Yan-Jardim"> LINK DO GIT</S.Link></> : <>Nada de link aqui </>}
-            <br />
-            {link ? <><a href="https://github.com/Yan-Jardim"> LINK DO GIT</a></> : <>Nada de link aqui </>}
+            </form >
 
         </div>
-
     );
 }
 export default Home;
 
-//Vai fazer 4 cards que usem o mesmo componente porem mostre textos diferentes
-
-// Mostrar 2 links que consomem o mesmo componente que vai ser passado um boleno props, se um passar true exibe o link, se eu passar false ou não 
-// passar nada , não exibe o link
