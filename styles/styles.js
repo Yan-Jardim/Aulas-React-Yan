@@ -1,12 +1,7 @@
 import styled from 'styled-components'
 
 
-
-export const Button = styled.button`
-display: flex ;
-
-`
-export const Teste = styled.p`
-color: red;
-
+export const Titulo = styled.h3`
+display: flex;
+flex-direction: column;
 `
