@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 
-export const bulls = styled.div`
+export const teste = styled.div`
 
 `
-
