@@ -10,13 +10,13 @@ function Home() {
     const [jogador, setJogador] = useState()
     const [DadoEditado, setDadoEditado] = useState()
     useEffect(() => {
-        axios.get("https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/camisetas.json")
+        axios.get("https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/NBA.json")
             .then(function (response) {
                 setResposta(response.data);
             })
     }, [])
     const Cadastro = () => {
-        axios.post("https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/camisetas.json", {
+        axios.post("https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/NBA.json", {
             time: time,
             numero: numero,
             jogador: jogador
@@ -28,7 +28,7 @@ function Home() {
             })
     }
     const deletar = (id) => {
-        axios.delete(`https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/camisetas/${id}.json`, {})
+        axios.delete(`https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/NBA/${id}.json`, {})
             .then(function (response) {
                 alert('Seu Time foi Excluido')
             }).catch(function () {
@@ -37,7 +37,7 @@ function Home() {
     }
 
     const editar = (id) => {
-        axios.patch(`https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/camisetas/${id}.json`, {time:DadoEditado})
+        axios.patch(`https://teste-aula-metodos-7ba07-default-rtdb.firebaseio.com/NBA/${id}.json`, { time: DadoEditado })
             .then(function (response) {
                 alert('Seu Time foi Editado')
             }).catch(function () {
@@ -51,8 +51,8 @@ function Home() {
                 {resposta && Object.entries(resposta).map((NBA) => {
                     return (
                         <>
-                            {NBA[1].time}
-                            <input onChange={(e)=>{setDadoEditado(e.target.value)}}/>
+                            {NBA[1].time}<br />
+                            <input onChange={(e) => { setDadoEditado(e.target.value) }} />
                             <button onClick={() => deletar(NBA[0])}>Excluir</button>
                             <button onClick={() => editar(NBA[0])}>Editar</button><br />
                         </>)
@@ -62,6 +62,8 @@ function Home() {
             <h2>Adicionar Time</h2>
             <form>
                 <label>Time: </label><input onChange={(e) => setTime(e.target.value)} /><br />
+                <label>Numero: </label><input onChange={(e) => setNumero(e.target.value)} /><br />
+                <label>Jogador: </label><input onChange={(e) => setJogador(e.target.value)} /><br />
                 <button onClick={(e) => {
                     e.preventDefault()
                     Cadastro()
@@ -71,5 +73,3 @@ function Home() {
     );
 }
 export default Home;
-
-
