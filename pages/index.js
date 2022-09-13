@@ -62,8 +62,6 @@ function Home() {
             <h2>Adicionar Time</h2>
             <form>
                 <label>Time: </label><input onChange={(e) => setTime(e.target.value)} /><br />
-                <label>Numero: </label><input onChange={(e) => setNumero(e.target.value)} /><br />
-                <label>Jogador: </label><input onChange={(e) => setJogador(e.target.value)} /><br />
                 <button onClick={(e) => {
                     e.preventDefault()
                     Cadastro()
@@ -72,4 +70,5 @@ function Home() {
         </>
     );
 }
-export default Home;
+//quero que você use a colletcion de duas aulas atras e faça uma pagina que eu possa editar , criar e excluir algum tipo de conteudo baseado na sua api
+export default Home; 
